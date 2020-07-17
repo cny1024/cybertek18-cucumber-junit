@@ -70,11 +70,11 @@ public class GoogleStepDefinitions {
     }
 
     @Then("User should see {string} in the title")
-    public void userShouldSeeInTheTitle(String expectedInTitle) {
+    public void userShouldSeeInTheTitle(String expectedInTitle) throws InterruptedException{
 
         String expectedTitle = expectedInTitle + " - Google Search";
         String actualTitle = Driver.getDriver().getTitle();
-
+        Thread.sleep(1000);
         Assert.assertEquals(actualTitle, expectedTitle);
 
     }
